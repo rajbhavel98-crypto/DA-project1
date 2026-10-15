@@ -1,78 +1,195 @@
-# Employee Data Cleaning with Pandas & NumPy
+# Python Projects Collection
 
-A beginner-friendly data cleaning project in Python. It takes a small, messy employee dataset and cleans it step by step using Pandas and NumPy: removing duplicates, filling missing values, rebuilding emails, reordering columns, and adding a derived column.
+![Python](https://img.shields.io/badge/python-3.8%2B-blue)
+![License](https://img.shields.io/badge/license-MIT-green)
+![Status](https://img.shields.io/badge/status-active-brightgreen)
 
-## Overview
+A repository containing two standalone Python projects. Each project is self-contained and can be run independently.
 
-Real-world data is rarely clean. This project starts with an employee table that has:
+## Table of Contents
 
-- Missing names, departments, salaries, and emails
-- A duplicate record (same employee ID appearing twice)
-- Invalid ages (e.g. `101`, `-2`)
-- A broken email with no username (`@gmail.com`)
+- [About](#about)
+- [Projects at a Glance](#projects-at-a-glance)
+- [Project 1: project1.py](#project-1-project1py)
+- [Project 2: project2.py](#project-2-project2py)
+- [Getting Started](#getting-started)
+- [Folder Structure](#folder-structure)
+- [Troubleshooting](#troubleshooting)
+- [Roadmap](#roadmap)
+- [Contributing](#contributing)
+- [License](#license)
+- [Contact](#contact)
 
-The script walks through a practical cleaning workflow and produces a tidy, analysis-ready DataFrame.
+---
 
-## Cleaning Steps
+## About
 
-1. **Create the raw dataset** from a Python dictionary and keep an untouched copy (`old`) for comparison.
-2. **Drop unnecessary columns**: `S.No` and `Age` (the age data contains invalid values).
-3. **Remove the duplicate row** (the repeated employee ID `108`).
-4. **Fill missing salaries** with the mean salary of the dataset.
-5. **Fill missing departments** with `"IT"`, the most common department.
-6. **Rename and reposition the ID**: move `Id` to the first column as `Emp Id`.
-7. **Fill missing names** using the part of the email before the `@`.
-8. **Rebuild email addresses** as `name@gmail.com`, then drop the original `email` column.
-9. **Add a `YOE` column** (years of experience) using `np.where`: salary >= 40000 gives 5, otherwise 2.
+*(Write 3-4 lines: why you built these projects, what problems they solve, and what you learned.)*
 
-## Final Columns
+## Projects at a Glance
 
-| Emp Id | name | Dept | salary | mail | YOE |
-|--------|------|------|--------|------|-----|
+| Project | File | Purpose | Key Libraries |
+|---------|------|---------|---------------|
+| Project 1 | `project1.py` | *(one-line purpose)* | *(e.g. `os`, `random`)* |
+| Project 2 | `project2.py` | *(one-line purpose)* | *(e.g. `requests`, `tkinter`)* |
 
-## Tech Stack
+---
 
-- Python 3
-- Pandas
-- NumPy
+## Project 1: `project1.py`
+
+### Description
+*(Detailed explanation of what this project does, who it is for, and how it works.)*
+
+### Features
+- Feature 1: *(explain briefly)*
+- Feature 2: *(explain briefly)*
+- Feature 3: *(explain briefly)*
+
+### How It Works
+1. *(Step 1: what the program does first)*
+2. *(Step 2: how it processes input)*
+3. *(Step 3: what it outputs)*
+
+### Usage
+```bash
+python project1.py
+```
+
+### Input / Output
+
+**Input:**
+```
+(sample input)
+```
+
+**Output:**
+```
+(sample output)
+```
+
+### Screenshots
+*(Add images here, e.g. `![Project 1 demo](images/project1.png)`)*
+
+---
+
+## Project 2: `project2.py`
+
+### Description
+*(Detailed explanation of what this project does, who it is for, and how it works.)*
+
+### Features
+- Feature 1: *(explain briefly)*
+- Feature 2: *(explain briefly)*
+- Feature 3: *(explain briefly)*
+
+### How It Works
+1. *(Step 1)*
+2. *(Step 2)*
+3. *(Step 3)*
+
+### Usage
+```bash
+python project2.py
+```
+
+### Input / Output
+
+**Input:**
+```
+(sample input)
+```
+
+**Output:**
+```
+(sample output)
+```
+
+### Screenshots
+*(Add images here, e.g. `![Project 2 demo](images/project2.png)`)*
+
+---
 
 ## Getting Started
 
-```bash
-# Clone the repository
-git clone https://github.com/<your-username>/<your-repo-name>.git
-cd <your-repo-name>
+### Prerequisites
 
-# Install dependencies
-pip install pandas numpy
+- Python 3.8 or higher ([download](https://www.python.org/downloads/))
+- pip (comes with Python)
+- Git
 
-# Run the script
-python main.py
+### Installation
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/<your-username>/<your-repo>.git
+   cd <your-repo>
+   ```
+
+2. **Create a virtual environment (recommended)**
+   ```bash
+   python -m venv venv
+
+   # macOS / Linux
+   source venv/bin/activate
+
+   # Windows
+   venv\Scripts\activate
+   ```
+
+3. **Install dependencies**
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+4. **Run a project**
+   ```bash
+   python project1.py
+   python project2.py
+   ```
+
+## Folder Structure
+
+```
+.
+├── project1.py        # Project 1 source code
+├── project2.py        # Project 2 source code
+├── requirements.txt   # Python dependencies
+├── images/            # Screenshots (optional)
+├── LICENSE
+└── README.md
 ```
 
-If you are using a Jupyter Notebook, paste the code into a cell and the last line (`df`) will display the cleaned table.
+## Troubleshooting
 
-## What I Learned
+| Problem | Solution |
+|---------|----------|
+| `python: command not found` | Try `python3` instead of `python`. |
+| `ModuleNotFoundError` | Run `pip install -r requirements.txt`. |
+| Permission errors | Run inside a virtual environment, avoid `sudo pip`. |
 
-- Handling missing values with `fillna()`
-- Dropping rows and columns with `drop()`
-- Reordering columns with `pop()` and `insert()`
-- Extracting text with `str.split()`
-- Creating conditional columns with `np.where()`
+## Roadmap
 
-## Notes and Limitations
+- [ ] Add more features to Project 1
+- [ ] Add more features to Project 2
+- [ ] Add unit tests
+- [ ] Improve documentation
 
-- The `YOE` column is a placeholder rule based on salary, not real experience data.
-- Filling salaries with the mean and departments with `"IT"` are simple strategies, suitable for practice but not for production data.
-- Emails are rebuilt using a fixed `@gmail.com` domain.
+## Contributing
 
-## Future Improvements
+Contributions are welcome!
 
-- Validate ages and emails with rules instead of dropping columns
-- Detect duplicates automatically with `drop_duplicates()`
-- Wrap the steps into reusable functions
-- Export the cleaned data to CSV or Excel
+1. Fork the repository
+2. Create a branch: `git checkout -b feature/your-feature`
+3. Commit your changes: `git commit -m "Add your feature"`
+4. Push to the branch: `git push origin feature/your-feature`
+5. Open a Pull Request
 
 ## License
 
-This project is open source and available under the [MIT License](LICENSE).
+Distributed under the MIT License. See `LICENSE` for more information.
+
+## Contact
+
+- **Author:** *(your name)*
+- **GitHub:** [@your-username](https://github.com/your-username)
+- **Email:** *(your email)*
