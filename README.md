@@ -190,6 +190,6 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 ## Contact
 
-- **Author:** *(your name)*
-- **GitHub:** [@your-username](https://github.com/your-username)
-- **Email:** *(your email)*
+- **Author:** *Raj Bhavel*
+- **GitHub:** https://github.com/rajbhavel98-crypto
+- **Email:** *rajbhavel98@gmail.com*
